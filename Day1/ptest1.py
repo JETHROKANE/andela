@@ -2,6 +2,10 @@
 #from __future__ import division
 
 def primeAnalysis(b):
+
+    if not isinstance(b, int):
+        raise ValueError('The provided input is not an intiger.')
+
     y = ''
 
     for x in range(0, b + 1):
