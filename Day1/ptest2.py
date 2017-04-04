@@ -10,5 +10,11 @@ class ptest2(unittest.TestCase):
     def test_int(self):
         self.assertEqual(primeAnalysis(26.12), 'The provided input is not an intiger.')
 
+    def test_str(self):
+        self.assertEqual(primeAnalysis('str'), 'The provided input is not an intiger.')
+
+    def test_neg(self):
+        self.assertEqual(primeAnalysis(-51), 'The provided input is not an intiger.')
+
 if __name__ == '__main__':
     unittest.main()
