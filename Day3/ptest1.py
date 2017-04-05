@@ -1,4 +1,6 @@
 #!/usr/bin/python
+import re
+
 
 def words(a):
     a = str(a)
@@ -10,12 +12,13 @@ def words(a):
             x = int(x)
             c[x] = y
         except:
-            y = a.count(x)
+            a = a.replace('\t', a)
+            y = len(re.findall(' ' + x + ' ', a))
             c[x] = y
 
     return c
 
-a = "testing 1 2 testing"
+a = "car : carpet as java : javascript!!&@$%^&"
 response = words(a)
 
 print str(response)
