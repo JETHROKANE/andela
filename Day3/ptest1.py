@@ -13,7 +13,7 @@ def words(a):
             c[x] = y
         except:
             a = a.replace('\t', a)
-            y = len(re.findall(' ' + x + ' ', a))
+            y = len(re.findall(x, a))
             c[x] = y
 
     return c
