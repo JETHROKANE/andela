@@ -1,29 +1,35 @@
 #!/usr/bin/python
-import unittest
-from ptest1 import find_missing
 
-class MissingNumberTest(unittest.TestCase):
-    """docstring for MissingNumberTest"""
+class BinarySearch:
+    """This is the binary search algorithm"""
 
-    def test_empty_list(self):
-        self.assertEqual(0, find_missing([], []),
-                         msg='should return 0 for empty list')
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        self.c = 0
+        d = [self.b]
+        self.e = self.a * self.b
+        self.f = self.b
 
-    def test_same_entries(self):
-        list1 = find_missing([2], [2])
-        list2 = find_missing([4], [4])
-        list3 = find_missing([7], [7])
-        self.assertListEqual([0, 0, 0],
-                             [list1, list2, list3],
-                             msg='should return 0 for lists with the same entries')
+        while (self.f <= self.e):
+            self.f += self.b
+            d.append(self.f)
+            self.c += 1
 
-    def test_missing_entries(self):
-        list1 = find_missing([1, 2], [1, 2, 5])
-        list2 = find_missing([4, 6, 8], [4, 6, 8, 10])
-        list3 = find_missing([5, 4, 7, 6, 11, 66], [5, 4, 1, 7, 6, 11, 66])
-        self.assertListEqual([5, 10, 1],
-                             [list1, list2, list3],
-                             msg='should return the missing number for lists with similar entries and a missing number')
+        self.d = d
+        self.g = len(self.d)
 
-if __name__ == '__main__':
-    unittest.main()
+
+
+
+    def search(self, g):
+        if g == "count":
+            return self.c
+        elif g == "index":
+            return self.f
+        else:
+            return [self.b, self.e, self.a]
+
+
+#results = BinarySearch(20, 1)
+#print results.search()
